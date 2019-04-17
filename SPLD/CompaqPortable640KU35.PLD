@@ -1,0 +1,81 @@
+Name     CompaqPortable640KU35 ;
+PartNo   00 ;
+Date     17/04/2019 ;
+Revision 01 ;
+Designer None ;
+Company  Monotech PCs ;
+Assembly None ;
+Location  ;
+Device   g16v8a ;
+
+/* Pinout vs Compaq's U35 Socket
+ATF16V8B	82S123
+	1	NC
+	2	NC
+	3	10
+	4	11
+	5	12
+	6	13
+	7	14
+	8	NC
+	9	NC
+	10	8
+	11	NC
+	12	1
+	13	2
+	14	3
+	15	4
+	16	5
+	17	6
+	18	7
+	19	NC
+	20	16
+
+Connect GAL Pin2 to GND for 256K mode (64+64+64+64).
+Leave GAL Pin2 NC for 640K mode (64+64+256+256).
+
+*/
+
+/* *************** INPUT  PINS *********************/
+PIN 2 = 256K;
+PIN 3 = A16;
+PIN 4 = A17;
+PIN 5 = A18;
+PIN 6 = A19;
+PIN 7 = DACK0;
+
+/* *************** OUTPUT PINS *********************/
+PIN 12 = G2B;
+PIN 13 = G;
+PIN 14 = B3;
+PIN 15 = B2;
+PIN 16 = B1;
+PIN 17 = B0;
+PIN 18 = SEL;
+
+
+/* ***************  EQUATIONS  *********************/
+
+!G2B = DACK0 & A19 & A18 & A17 & A16;
+
+!G = DACK0 & !A19 & !A18
+   # DACK0 & !A19 & A18 & 256K
+   # DACK0 & A19 & !A18 & !A17 & 256K;
+
+B3 = DACK0 & !A19 & !A18 & A17 & A16 & !256K
+   # DACK0 & !A19 & A18 & A17 & 256K
+   # DACK0 & A19 & !A18 & !A17 & 256K
+   # !DACK0;
+
+B2 = DACK0 & !A19 & !A18 & A17 & !A16
+   # DACK0 & !A19 & !A18 & A17 & A16 & 256K
+   # DACK0 & !A19 & A18 & !A17 & 256K
+   # !DACK0;
+
+B1 = DACK0 & !A19 & !A18 & !A17 & A16
+   # !DACK0;
+
+B0 = DACK0 & !A19 & !A18 & !A17 & !A16
+   # !DACK0;
+
+SEL = !DACK0;
