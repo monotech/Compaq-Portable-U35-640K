@@ -1,11 +1,15 @@
 # Compaq Portable RAM Decoder PROM (U35)
 SPLD-based replacement of RAM decoder PROM in Compaq Portable, allowing either 256K or 640K RAM on the system board.
 
+![Completed](Completed.jpg)
+
 This goes into socket U35 on the original Compaq Portable motherboard.
+
+![Installed](Installed.jpg)
 
 This isn't for later model Compaq Portable motherboards, which use jumpers instead and don't need a PROM replaced to upgrade onboard RAM.
 
-![Board versions](Board Version 1 vs 2.png)
+![Board versions](Board%20Version%201%20vs%202.png)
 
 If you'd like to have 256K RAM onboard and you don't own a 256K U35 (PN 100340-001 (some PROMs only have the PROM model enscribed)), you can install this and close the jumper to put it into 256K mode. Then ensure the two socketed DRAM banks contain 64Kx1 ICs (256Kx1 ICs should work just fine too).
 
