@@ -5,6 +5,8 @@ This goes into socket U35 on the original Compaq Portable motherboard.
 
 This isn't for later model Compaq Portable motherboards, which use jumpers instead and don't need a PROM replaced to upgrade onboard RAM.
 
+![Board versions](Board Version 1 vs 2.png)
+
 If you'd like to have 256K RAM onboard and you don't own a 256K U35 (PN 100340-001 (some PROMs only have the PROM model enscribed)), you can install this and close the jumper to put it into 256K mode. Then ensure the two socketed DRAM banks contain 64Kx1 ICs (256Kx1 ICs should work just fine too).
 
 If you'd like to have 640K RAM onboard and you don't own a 640K U35 (PN 101257-001 (some PROMs only have the PROM model enscribed)), you can install this and remove the jumper to put it into 640K mode. Then ensure the two socketed DRAM banks contain 256Kx1 ICs.
