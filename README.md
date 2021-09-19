@@ -17,3 +17,6 @@ This is useful because it can save you an ISA slot, since you no longer need to 
 I did experiment trying to install a third bank of 256K, and using some as UMB, but it seemed to 'almost' work, but was unstable. It was a few years ago so I don't remember the exact details.
 
 If this page is still up, then I should have stock if you'd just like to buy one instead - I have the DRAM ICs too: https://monotech.fwscart.com/Compaq_Portable_640K_U35_RAM_Decoder_PROM/p6083514_19805777.aspx
+
+# License
+Creative Commons CC BY-SA 4.0: https://creativecommons.org/licenses/by-sa/4.0/.
